@@ -1,32 +1,61 @@
-import React from "react";
+import React, { useContext } from "react";
+import { GlobalContext } from "../../../Context/GlobalContext";
 import {
-  Grid,
+  Card,
+  CardContent,
+  CardMedia,
+  IconButton,
   Typography,
 } from "@mui/material";
-import { ThemeProvider } from "@mui/material/styles";
-import { themeContext } from "../../../Context/theme";
-import ProductCard from "../../Common/ProductCard/ProductCard";
+import FavoriteIcon from "@mui/icons-material/Favorite";
 
-const Favs = ({ favs, dispatch }) => {
+const Favs = () => {
+  const { state, dispatch } = useContext(GlobalContext);
+
   return (
-    <div>
-      <ThemeProvider theme={themeContext}>
-        <Typography gutterBottom variant="h2" component="div" align="center">
-          Favoritos
-        </Typography>
-        <Grid container spacing={1} columns={{ xs: 2, sm: 4, md: 12 }}>
-        {favs.map((fav) => (
-              <Grid item xs={2} sm={2} md={4} key={fav.id}>
-                <ProductCard
-                  e={fav}
-                  favs={favs}
-                  dispatch={dispatch}
-                ></ProductCard>
-              </Grid>
-            ))}
-        </Grid>
-      </ThemeProvider>
-    </div>
+    <>
+      <h1>Dentistas Favoritos</h1>
+      <div className="favs-grid">
+        {state.favs.map((fav) => (
+          <Card sx={{ width: 300, textAlign: "center" }} key={fav.id}>
+            <CardMedia
+              sx={{ height: 140 }}
+              image="https://res.cloudinary.com/drzyncm5r/image/upload/v1680836029/doctor_ml6xtf.jpg"
+              title={fav.name}
+            />
+            <CardContent>
+              <Typography gutterBottom variant="h5" component="div">
+                {fav.name}
+              </Typography>
+              <Typography variant="body2" color="text.secondary">
+                Email: {fav.email}
+              </Typography>
+              <Typography variant="body2" color="text.secondary">
+                Telefono: {fav.phone}
+              </Typography>
+              <Typography variant="body2" color="text.secondary">
+                Pagina web: {fav.website}
+              </Typography>
+            </CardContent>
+            <IconButton
+              aria-label="add to favorites"
+              onClick={() =>
+                dispatch({ type: "HANDLE_FAVORITE", payload: fav })
+              }
+              style={{ backgroundColor: "white" }}
+            >
+              <FavoriteIcon
+                color={
+                  state.favs.some((favorite) => favorite.id === fav.id)
+                    ? "error"
+                    : "disabled"
+                }
+              />
+            </IconButton>
+          </Card>
+        ))}
+      </div>
+    </>
   );
 };
 

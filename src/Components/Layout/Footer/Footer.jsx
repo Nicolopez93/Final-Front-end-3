@@ -1,16 +1,12 @@
-import React from "react";
-import "./Footer.css";
-import { Link } from "react-router-dom";
+import React from 'react'
 
 const Footer = () => {
   return (
-    <footer>
-      <p>Copyright SucuLove</p>
-      <Link to="https://florrueda.github.io/" target="_blank">
-        Designed by Florencia Rueda
-      </Link>
+    <footer style={{display: 'flex', justifyContent:'center'}}>
+        <p>Powered by</p>
+        <img style={{width:'20%'}} src="https://res.cloudinary.com/drzyncm5r/image/upload/v1680836029/DH_eyp6pf.png" alt='DH-logo' />
     </footer>
-  );
-};
+  )
+}
 
-export default Footer;
+export default Footer

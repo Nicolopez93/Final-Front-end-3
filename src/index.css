@@ -1,0 +1,132 @@
+.body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.light {
+  background-color: #f2f7fd; 
+  color: #333;
+}
+
+.light button, .light button .MuiButtonBase {
+  background-color: #007bff; 
+}
+
+.light button:hover , .light button .MuiButtonBase {
+  background-color: #0056b3; 
+  color: #333; 
+}
+
+.dark button, .dark button .MuiButtonBase {
+  background-color: #007bff; 
+}
+
+.dark button:hover, .dark button .MuiButtonBase {
+  background-color: #0056b3; 
+}
+
+.dark {
+   background-color: #333; 
+   color: #fff; 
+}
+
+.dark .a {
+  color: #333; 
+}
+
+.dark .a:hover {
+  color: #666; 
+}
+
+.light .a:hover {
+  color: #0056b3; 
+}
+
+.a {
+  font-weight: 600;
+  color: #333; 
+  text-decoration: none;
+  margin: 5px;
+  cursor: pointer;
+}
+
+h1 {
+  text-align: center;
+  color: #0056b3;
+}
+
+.home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+}
+
+.dark .MuiAvatar-root {
+  background-color: #666; 
+  color: #333; 
+}
+
+.light .MuiAvatar-root {
+  background-color: #007bff; 
+}
+
+.favs-grid {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 1rem;
+}
+
+#contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 300px;
+  margin: 1rem;
+}
+
+.light div .MuiFormControl-root {
+  margin: 1rem;
+  background-color: #cfe5f4; 
+}
+
+.dark div .MuiFormControl-root {
+  margin: 1rem;
+  background-color: #fff; 
+}
+
+#outlined-basic { 
+  color: #333; 
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  height: 40px;
+  margin-top: 1rem;
+}
+
+footer > img{
+  width: 200px;
+  margin: 0;
+}
+
+footer > p{
+  margin: 0;
+  padding-top: 0.7rem;
+}
